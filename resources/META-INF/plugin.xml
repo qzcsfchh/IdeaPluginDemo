@@ -1,38 +1,59 @@
 <idea-plugin>
-  <id>io.github.qzcsfchh.idea.plugin.demo</id>
-  <name>PluginDemo</name>
-  <version>1.0</version>
-  <vendor email="csfchh@qq.com" url="https://github.com/qzcsfchh">io.github.qzcsfchh</vendor>
+    <id>io.github.qzcsfchh.idea.plugin.demo</id>
+    <name>PluginDemo</name>
+    <version>1.0</version>
+    <vendor email="csfchh@qq.com" url="https://github.com/qzcsfchh">io.github.qzcsfchh</vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
       My test Idea plugin, demonstrates how to create a plugin.<br>
       <em>Test only.</em>
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
       Initial release of the plugin.
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
-  <idea-version since-build="173.0"/>
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+    <idea-version since-build="173.0"/>
 
-  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
-       on how to target different products -->
-  <depends>com.intellij.modules.platform</depends>
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
 
-  <actions>
-    <!-- Add your actions here -->
-    <group id="PluginDemo.DialogMenu" text="Dialog Group" description="Show dialogs">
-      <add-to-group group-id="MainMenu" anchor="last"/>
-      <action class="io.github.qzcsfchh.idea.plugin.demo.TextBoxed" text="Input Dialog"
-              id="PluginDemo.TextBoxed"
-              description="Show input dialog"/>
-    </group>
-  </actions>
+    <actions>
+        <!-- Add your actions here -->
+        <!--        <group id="PluginDemo.MyGroup" text="MyGroup" description="Test my idea plugin">-->
+        <!--            <add-to-group group-id="MainMenu" anchor="last"/>-->
+        <!--            <action class="io.github.qzcsfchh.idea.plugin.demo.TextBoxed"-->
+        <!--                    id="io.github.qzcsfchh.idea.plugin.demo.TextBoxed"-->
+        <!--                    text="Input Dialog"-->
+        <!--                    description="Show input dialog">-->
+        <!--            </action>-->
+
+        <!--            <action id="io.github.qzcsfchh.idea.plugin.demo.action.dialog.InputDialog"-->
+        <!--                    class="io.github.qzcsfchh.idea.plugin.demo.action.dialog.InputDialog" text="InputDialog"-->
+        <!--                    description="Show input dialog">-->
+        <!--            </action>-->
+        <!--        </group>-->
+
+
+        <action id="io.github.qzcsfchh.idea.plugin.demo.action.dialog.InputDialog"
+                class="io.github.qzcsfchh.idea.plugin.demo.action.dialog.InputDialog"
+                text="InputDialog"
+                description="Test input dialog">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+        <action id="NotificationTest"
+                class="io.github.qzcsfchh.idea.plugin.demo.action.notification.NotificationTest"
+                text="NotificationTest"
+                description="Test notification">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
 
 </idea-plugin>

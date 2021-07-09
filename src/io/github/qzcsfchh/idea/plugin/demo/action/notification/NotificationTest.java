@@ -1,4 +1,4 @@
-package io.github.qzcsfchh.idea.plugin.demo.notification;
+package io.github.qzcsfchh.idea.plugin.demo.action.notification;
 
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationDisplayType;
